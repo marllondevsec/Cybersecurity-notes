@@ -1,0 +1,13 @@
+ _ _                  
+| (_)_ __  _   ___  __
+| | | '_ \| | | \ \/ /
+| | | | | | |_| |>  < 
+|_|_|_| |_|\__,_/_/\_\
+                      
+ristretto | ver foto pelo terminal.
+
+ 
+xrandr | lista todos os dispositivos conectados 
+
+xrandr --output <MONITOR> --brightness 0.7 | modifica o brilho da tela
+

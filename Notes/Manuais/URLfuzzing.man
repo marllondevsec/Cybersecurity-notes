@@ -1,0 +1,19 @@
+            _  __               _             
+ _   _ _ __| |/ _|_   _ _______(_)_ __   __ _ 
+| | | | '__| | |_| | | |_  /_  / | '_ \ / _` |
+| |_| | |  | |  _| |_| |/ / / /| | | | | (_| |
+ \__,_|_|  |_|_|  \__,_/___/___|_|_| |_|\__, |
+                                        |___/ 
+
+Use o ffuf se você precisa de uma ferramenta de fuzzing rápida e versátil, com suporte para vários tipos de ataques e uma saída detalhada.
+Use o dirb se você está buscando uma solução simples e direta para fuzzing de diretórios e arquivos.
+                                                    
+#usando o ffuf
+
+ffuf -u http://example.com/FUZZ -w /path/to/wordlist.txt
+#obs tem que ter o marcador FUZZ aonde voce quer que seja trocado
+
+#usando o dirb
+
+dirb http://example.com /path/to/wordlist.txt
+

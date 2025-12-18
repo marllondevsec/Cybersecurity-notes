@@ -1,0 +1,36 @@
+ _     _            _              _   _     
+| |__ | |_   _  ___| |_ ___   ___ | |_| |__  
+| '_ \| | | | |/ _ \ __/ _ \ / _ \| __| '_ \ 
+| |_) | | |_| |  __/ || (_) | (_) | |_| | | |
+|_.__/|_|\__,_|\___|\__\___/ \___/ \__|_| |_|
+
+
+#ativar
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
+
+#interagir com o adaptador
+bluetoothctl
+
+#ligar 
+[bluetooth]# power on
+
+#descobrir aparelhos
+[bluetooth]# scan on
+
+#parar scan 
+[bluetooth]# scan off
+
+#listar dispositivos encontrados 
+[bluetooth]# devices
+
+#emparelhar ao dispositivo 
+[bluetooth]# pair <MAC do dispositivo>
+
+#conectar ao dispositivo 
+[bluetooth]# connect <MAC do dispositivo>
+
+#disconectar do dispositivo 
+[bluetooth]# disconnect <MAC do dispositivo>
+
+---------------------------------------------------------------------------

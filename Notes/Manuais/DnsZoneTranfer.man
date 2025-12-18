@@ -1,0 +1,4 @@
+host -t ns <URL do alvo> | achar os servidores de dns do alvo
+
+dig <@servidor.dns> <URL do alvo> axfr | testar o dns zone transfer
+ 

